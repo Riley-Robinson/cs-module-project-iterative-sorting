@@ -8,9 +8,18 @@ def selection_sort(arr):
         # (hint, can do in 3 loc)
         # Your code here
 
+        smallest_value = arr[cur_index]
+
+        for unsorted_index in range(cur_index, len(arr)):
+            if arr[unsorted_index] < smallest_value:
+                smallest_value = arr[unsorted_index]
+                smallest_index = unsorted_index
+
 
         # TO-DO: swap
         # Your code here
+
+        arr[cur_index], arr[smallest_index] = arr[smallest_index], arr[cur_index]
 
     return arr
 
@@ -19,6 +28,12 @@ def selection_sort(arr):
 def bubble_sort(arr):
     # Your code here
 
+    n = len(arr)
+
+    for i in range(n - 1):
+        for j in range(0, n-i-1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
 
     return arr
 
